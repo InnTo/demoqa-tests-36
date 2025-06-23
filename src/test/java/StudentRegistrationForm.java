@@ -20,6 +20,9 @@ public class StudentRegistrationForm {
     void fillRegistrationFormTest() {
         open("/automation-practice-form");
 
+        executeJavaScript("$('footer').remove();");
+        executeJavaScript("$('#fixedban').remove();");
+
         //Заполнение формы
         $("#firstName").setValue("Test");
         $("#lastName").setValue("TestLastName");
