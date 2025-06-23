@@ -26,7 +26,11 @@ public class StudentRegistrationForm {
         $("#userEmail").setValue("Test@test.ru");
         $(byText("Male")).click();
         $("#userNumber").setValue("8961530834");
-       // $("#dateOfBirthInput").setValue("Another test address"); //Дата и так есть и можно не вводить
+
+        $("#dateOfBirthInput").clear();
+        $(".react-datepicker__month-select").selectOption("April");
+        $(".react-datepicker__year-select").selectOption("2002");
+        $$(".react-datepicker__day").findBy(text("30")).click();
 
         $("#subjectsInput").setValue("Maths");
         $$(".subjects-auto-complete__option").findBy(text("Maths")).click(); //. указывает, что это класс, а не тег, можно явно прописывать класс
@@ -48,7 +52,7 @@ public class StudentRegistrationForm {
         $(".table-responsive").shouldHave(text("Test@test.ru"));
         $(".table-responsive").shouldHave(text("Male"));
         $(".table-responsive").shouldHave(text("8961530834"));
-        $(".table-responsive").shouldHave(text("15 June,2025"));
+        $(".table-responsive").shouldHave(text("30 April,2002"));
         $(".table-responsive").shouldHave(text("Maths"));
         $(".table-responsive").shouldHave(text("Sports"));
         $(".table-responsive").shouldHave(text("test.jpg"));
